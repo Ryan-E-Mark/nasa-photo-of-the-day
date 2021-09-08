@@ -7,37 +7,19 @@ import Footer from './Components/nasaFooter';
 import { API_KEY } from './constants/index'
 
 function App() {
-  const [spaceImg, setSpaceImg] = useState('');
-  const [info, setInfo] = useState('');
-  const [title, setTitle] = useState('');
-  const [date, setDate] = useState('');
+  const [nasaData, setNasaData] = useState('');
+  // const [info, setInfo] = useState('');
+  // const [title, setTitle] = useState('');
+  // const [date, setDate] = useState('');
 
   useEffect(() => {
     axios.get(`https://api.nasa.gov/planetary/apod?api_key=${API_KEY}`)
       .then(res => {
         // console.log(res);
-        setSpaceImg(res.data.url);
-      }).catch(err => console.log(err));
-  }, [])
-
-  useEffect(() => {
-    axios.get(`https://api.nasa.gov/planetary/apod?api_key=${API_KEY}`)
-      .then(res => {
-        setInfo(res.data.explanation);
-      }).catch(err => console.log(err));
-  }, [])
-
-  useEffect(() => {
-    axios.get(`https://api.nasa.gov/planetary/apod?api_key=${API_KEY}`)
-      .then(res => {
-        setTitle(res.data.title);
-      }).catch(err => console.log(err));
-  }, [])
-
-  useEffect(() => {
-    axios.get(`https://api.nasa.gov/planetary/apod?api_key=${API_KEY}`)
-      .then(res => {
-        setDate(res.data.date);
+        setNasaData(res.data);
+        // setInfo(res.data.explanation);
+        // setTitle(res.data.title);
+        // setDate(res.data.date);
       }).catch(err => console.log(err));
   }, [])
 
@@ -45,14 +27,14 @@ function App() {
     
     <div className="App">
 
-      {spaceImg === null && <p>Loading, Please Wait!</p>}
+      {nasaData === null && <p>Loading, Please Wait!</p>}
 
       <header>
       <Header />
       </header>
 
       <section>
-      <Card spaceImg={spaceImg} title={title} info={info} date={date}/>
+      <Card nasaData={nasaData}/>
       </section>
       
       {/* <p>
