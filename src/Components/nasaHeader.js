@@ -3,7 +3,7 @@ import React, { useState, useEffect } from "react";
 export default function Header() {
 
     return (
-        <nav className="nav-bar">
+        <nav id="top" className="nav-bar">
             <div className="header-container">
                 <h2>Astronomy Photo of the Day!</h2>
             </div>

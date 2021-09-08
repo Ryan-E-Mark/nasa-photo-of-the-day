@@ -15,7 +15,7 @@ function App() {
   useEffect(() => {
     axios.get(`https://api.nasa.gov/planetary/apod?api_key=${API_KEY}`)
       .then(res => {
-        console.log(res);
+        // console.log(res);
         setSpaceImg(res.data.url);
       }).catch(err => console.log(err));
   }, [])
