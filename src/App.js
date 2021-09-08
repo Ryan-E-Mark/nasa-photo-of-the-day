@@ -3,6 +3,7 @@ import "./App.css";
 import axios from 'axios';
 import Header from './Components/nasaHeader';
 import Card from './Components/nasaCard';
+import Footer from './Components/nasaFooter';
 import { API_KEY } from './constants/index'
 
 function App() {
@@ -44,6 +45,8 @@ function App() {
     
     <div className="App">
 
+      {spaceImg === null && <p>Loading, Please Wait!</p>}
+
       <header>
       <Header />
       </header>
@@ -52,10 +55,11 @@ function App() {
       <Card spaceImg={spaceImg} title={title} info={info} date={date}/>
       </section>
       
-      <p>
+      {/* <p>
         Read through the instructions in the README.md file to build your NASA
         app! Have fun <span role="img" aria-label='go!'>🚀</span>!
-      </p>
+      </p> */}
+      <Footer />
     </div>
   );
 }

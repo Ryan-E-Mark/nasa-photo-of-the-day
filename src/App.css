@@ -54,18 +54,24 @@ span {
   font-size: 1.6rem;
 }
 
-p, a {
+p {
   font-size: 1rem;
+  color: #3D087B;
+}
+
+a {
+  font-size: 1.2rem;
   text-decoration: none;
+  color: #3D087B;
 }
 
 section {
-  background-color: black;
+  background-color: #11052C;
   padding: 2% 1%;
 }
 
 section p, span, h1 {
-  color: #fff;
+  color: #FFE459;
 }
 
 .nav-bar {
