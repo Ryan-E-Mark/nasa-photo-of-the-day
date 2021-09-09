@@ -1,8 +1,19 @@
 import React, { useState, useEffect } from "react";
 import styled from "styled-components";
 
+
 const StyledDiv = styled.div`
-    
+    background-color: ${pr => pr.theme.primaryColor};
+    padding: 1% 2%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    p, span, h1 {
+        color: ${pr => pr.theme.tertiaryColor};
+      }
+
     h1 {
         font-size: 2rem;
     }
