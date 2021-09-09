@@ -4,22 +4,18 @@ import axios from 'axios';
 import Header from './Components/nasaHeader';
 import Card from './Components/nasaCard';
 import Footer from './Components/nasaFooter';
-import { API_KEY } from './constants/index'
+import { API_KEY } from './constants/index';
+import styled from "styled-components";
 
 function App() {
   const [nasaData, setNasaData] = useState('');
-  // const [info, setInfo] = useState('');
-  // const [title, setTitle] = useState('');
-  // const [date, setDate] = useState('');
+
 
   useEffect(() => {
     axios.get(`https://api.nasa.gov/planetary/apod?api_key=${API_KEY}`)
       .then(res => {
         // console.log(res);
         setNasaData(res.data);
-        // setInfo(res.data.explanation);
-        // setTitle(res.data.title);
-        // setDate(res.data.date);
       }).catch(err => console.log(err));
   }, [])
 
